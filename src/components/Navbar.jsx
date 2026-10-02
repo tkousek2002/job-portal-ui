@@ -57,6 +57,7 @@ const Navbar = () => {
                 </Link>
                 <Link
                   to="/companies"
+                  title="Go to Companies"
                   className={`relative group px-4 py-3 text-sm font-semibold transition-all duration-300 ${
                     isActive("/companies")
                       ? "text-primary-600 dark:text-primary-400"
@@ -433,6 +434,7 @@ const Navbar = () => {
               </Link>
               <Link
                 to="/companies"
+                title="Go to Companies"
                 className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 block px-3 py-2 text-base font-medium transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
