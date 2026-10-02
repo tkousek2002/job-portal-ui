@@ -90,13 +90,15 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               <li>
-                <Link
-                  to="/jobs"
-                  className="group flex items-center text-gray-300 hover:text-white transition-all duration-300"
-                >
-                  <span className="w-2 h-2 bg-primary-400 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                  Browse Jobs
-                </Link>
+                <Tooltip text="Go to job listings">
+                  <Link
+                    to="/jobs"
+                    className="group flex items-center text-gray-300 hover:text-white focus:text-white focus:outline-none transition-all duration-300"
+                  >
+                    <span className="w-2 h-2 bg-primary-400 rounded-full mr-3 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300"></span>
+                    Browse Jobs
+                  </Link>
+                </Tooltip>
               </li>
               <li>
                 <Link
