@@ -1,5 +1,40 @@
 {
-  "enabledPlugins": {
-    "commit-commands@claude-plugins-official": true
-  }
+	"enabledPlugins": {
+		"commit-commands@claude-plugins-official": true
+	},
+	"enabledMcpjsonServers": [
+		"chrome-devtools"
+	],
+	"permissions": {
+		"allow": [
+			"mcp__playwright__browser_run_code_unsafe"
+		]
+	},
+	"statusLine": {
+		"type": "command",
+		"command": "bash .claude/statusline-command.sh"
+	},
+	"hooks": {
+		"Notification": [],
+		"PreToolUse": [
+			{
+				"matcher": "Write|Edit",
+				"hooks": [
+					{
+						"type": "command",
+						"command": "py .claude/hooks/secret-guard.py"
+					}
+				]
+			},
+			{
+				"matcher": "Write|Edit",
+				"hooks": [
+					{
+						"type": "command",
+						"command": "py .claude/hooks/line-limit.py"
+					}
+				]
+			}
+		]
+	}
 }
